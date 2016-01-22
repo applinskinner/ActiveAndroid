@@ -16,6 +16,7 @@ package com.activeandroid.sebbia;
  * limitations under the License.
  */
 
+import com.activeandroid.sebbia.util.MultiDexHelper;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
@@ -126,7 +127,13 @@ final class ModelInfo {
 	private void scanForModel(Context context) throws IOException {
 		String packageName = context.getPackageName();
 		String sourcePath = context.getApplicationInfo().sourceDir;
-		List<String> paths = new ArrayList<String>();
+		List<String> paths;
+
+		try {
+			paths = MultiDexHelper.getAllClasses(context);
+		} catch (Exception ex) {
+			paths = new ArrayList<String>();
+		}
 
 		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
 			DexFile dexfile = new DexFile(sourcePath);
