@@ -113,6 +113,7 @@ public final class AnnotationProcessor extends AbstractProcessor {
 			writer.write("import java.util.List;\n\n");
 			writer.write("import java.util.Map;\n\n");
 
+			writer.write("import com.activeandroid.Model;\n");
 			writer.write("import com.activeandroid.internal.ModelHelper;\n");
 			writer.write("import com.activeandroid.internal.ModelFiller;\n");
 			writer.write("\n");
