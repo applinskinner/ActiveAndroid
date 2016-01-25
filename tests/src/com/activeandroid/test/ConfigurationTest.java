@@ -5,9 +5,9 @@ import java.util.List;
 
 import android.test.AndroidTestCase;
 
-import com.activeandroid.sebbia.Configuration;
-import com.activeandroid.sebbia.Model;
-import com.activeandroid.sebbia.annotation.Table;
+import com.activeandroid.Configuration;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Table;
 
 public class ConfigurationTest extends AndroidTestCase {
 

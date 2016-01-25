@@ -3,10 +3,10 @@ package com.activeandroid.test.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.activeandroid.sebbia.Model;
-import com.activeandroid.sebbia.annotation.Column;
-import com.activeandroid.sebbia.annotation.DoNotGenerate;
-import com.activeandroid.sebbia.query.Select;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.DoNotGenerate;
+import com.activeandroid.query.Select;
 
 public class DoNotGenerateTest extends ModelTestCase {
 	

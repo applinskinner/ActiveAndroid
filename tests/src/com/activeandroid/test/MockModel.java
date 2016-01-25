@@ -18,9 +18,9 @@ package com.activeandroid.test;
 
 import java.util.Date;
 
-import com.activeandroid.sebbia.Model;
-import com.activeandroid.sebbia.annotation.Column;
-import com.activeandroid.sebbia.annotation.Table;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
 
 @Table(name = "MockModel")
 public class MockModel extends Model {

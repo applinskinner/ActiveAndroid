@@ -5,9 +5,9 @@ import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.ApplicationTestCase;
 
-import com.activeandroid.sebbia.ActiveAndroid;
-import com.activeandroid.sebbia.Configuration;
-import com.activeandroid.sebbia.Model;
+import com.activeandroid.ActiveAndroid;
+import com.activeandroid.Configuration;
+import com.activeandroid.Model;
 
 public abstract class AutoMigrationTest extends ApplicationTestCase<Application> {
 

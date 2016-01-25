@@ -5,13 +5,13 @@ import java.util.List;
 
 import android.database.Cursor;
 
-import com.activeandroid.sebbia.ActiveAndroid;
-import com.activeandroid.sebbia.Cache;
-import com.activeandroid.sebbia.Model;
-import com.activeandroid.sebbia.TableInfo;
-import com.activeandroid.sebbia.annotation.Column;
-import com.activeandroid.sebbia.annotation.Table;
-import com.activeandroid.sebbia.query.Delete;
+import com.activeandroid.ActiveAndroid;
+import com.activeandroid.Cache;
+import com.activeandroid.Model;
+import com.activeandroid.TableInfo;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Delete;
 
 public class EnumTest extends ModelTestCase {
 

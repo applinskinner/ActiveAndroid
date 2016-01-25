@@ -18,7 +18,7 @@ package com.activeandroid.test;
 
 import android.test.ApplicationTestCase;
 
-import com.activeandroid.sebbia.app.Application;
+import com.activeandroid.app.Application;
 
 public abstract class ActiveAndroidTestCase extends ApplicationTestCase<Application> {
 	public ActiveAndroidTestCase() {
