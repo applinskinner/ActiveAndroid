@@ -113,8 +113,8 @@ public final class AnnotationProcessor extends AbstractProcessor {
 			writer.write("import java.util.List;\n\n");
 			writer.write("import java.util.Map;\n\n");
 
-			writer.write("import ModelHelper;\n");
-			writer.write("import ModelFiller;\n");
+			writer.write("import com.activeandroid.internal.ModelHelper;\n");
+			writer.write("import com.activeandroid.internal.ModelFiller;\n");
 			writer.write("\n");
 			writer.write("public class " + fillerClassName + " extends ModelFiller {\n\n");
 			writer.write("  public void loadFromCursor(Model genericModel, android.database.Cursor " + CURSOR + ") {\n");
