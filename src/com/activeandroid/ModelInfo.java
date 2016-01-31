@@ -16,10 +16,15 @@ package com.activeandroid;
  * limitations under the License.
  */
 
+import dalvik.system.DexFile;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Modifier;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -120,7 +125,7 @@ final class ModelInfo {
 	private void scanForModel(Context context) throws IOException {
 		String packageName = context.getPackageName();
 		String sourcePath = context.getApplicationInfo().sourceDir;
-		List<String> paths = new ArrayList<String>();
+		List<String> paths = new ArrayList<>();
 
 		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
 			DexFile dexfile = new DexFile(sourcePath);
