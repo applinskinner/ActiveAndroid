@@ -125,7 +125,7 @@ final class ModelInfo {
 	private void scanForModel(Context context) throws IOException {
 		String packageName = context.getPackageName();
 		String sourcePath = context.getApplicationInfo().sourceDir;
-		List<String> paths = new ArrayList<>();
+		List<String> paths = new ArrayList<String>();
 
 		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
 			DexFile dexfile = new DexFile(sourcePath);
