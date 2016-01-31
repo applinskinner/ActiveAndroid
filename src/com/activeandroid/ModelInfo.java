@@ -59,7 +59,7 @@ final class ModelInfo {
 			try {
 				scanForModel(configuration.getContext());
 			}
-			catch (Exception e) {
+			catch (IOException e) {
 				Log.e("Couldn't open source path.", e);
 			}
 		}
@@ -118,9 +118,38 @@ final class ModelInfo {
 		return true;
 	}
 
-	private void scanForModel(Context context) throws Exception {
+	private void scanForModel(Context context) throws IOException {
 		String packageName = context.getPackageName();
-		List<String> paths = MultiDexHelper.getAllClasses(context);
+		String sourcePath = context.getApplicationInfo().sourceDir;
+		List<String> paths;
+
+		try {
+			paths = MultiDexHelper.getAllClasses(context);
+		} catch (Exception ex) {
+			paths = new ArrayList<String>();
+		}
+
+		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
+			DexFile dexfile = new DexFile(sourcePath);
+			Enumeration<String> entries = dexfile.entries();
+
+			while (entries.hasMoreElements()) {
+				paths.add(entries.nextElement());
+			}
+		}
+		// Robolectric fallback
+		else {
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			Enumeration<URL> resources = classLoader.getResources("");
+
+			while (resources.hasMoreElements()) {
+				String path = resources.nextElement().getFile();
+				if (path.contains("bin") || path.contains("classes")) {
+					paths.add(path);
+				}
+			}
+		}
+
 		for (String path : paths) {
 			File file = new File(path);
 			scanForModelClasses(file, packageName, context.getClassLoader());
