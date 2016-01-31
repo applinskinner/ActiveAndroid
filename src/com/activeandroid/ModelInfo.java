@@ -16,7 +16,6 @@ package com.activeandroid;
  * limitations under the License.
  */
 
-import com.activeandroid.util.MultiDexHelper;
 import java.io.File;
 import java.lang.reflect.Modifier;
 import java.util.Calendar;
@@ -121,13 +120,7 @@ final class ModelInfo {
 	private void scanForModel(Context context) throws IOException {
 		String packageName = context.getPackageName();
 		String sourcePath = context.getApplicationInfo().sourceDir;
-		List<String> paths;
-
-		try {
-			paths = MultiDexHelper.getAllClasses(context);
-		} catch (Exception ex) {
-			paths = new ArrayList<String>();
-		}
+		List<String> paths = new ArrayList<String>();
 
 		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
 			DexFile dexfile = new DexFile(sourcePath);
