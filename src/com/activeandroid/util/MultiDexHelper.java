@@ -95,6 +95,7 @@ public class MultiDexHelper {
         while (dexEntries.hasMoreElements()) {
           classNames.add(dexEntries.nextElement());
         }
+        dexfile.close();
       } catch (IOException e) {
         throw new IOException("Error at loading dex file '" +
             path + "'");
